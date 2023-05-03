@@ -26,13 +26,13 @@ public:
 	Cercle(int _x, int _y, int _r, int _edge_width, std::string _edge_color, std::string _fill_color);
 
 	//Getters des variables
-	int getX();
-	int getY();
-	int getR();
-	int getEdge_width();
-	std::string getEdge_color();
-	std::string getFill_color();
+	int getX() const;
+	int getY() const;
+	int getR() const;
+	int getEdge_width() const;
+	std::string getEdge_color() const;
+	std::string getFill_color() const;
 
 	//Dessin avec OpenCV
-	void dessiner(cv::Mat& mat);
+	void dessiner(cv::Mat& mat) const;
 };
