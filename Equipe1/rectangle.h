@@ -10,5 +10,5 @@ private:
 	std::string fill_color;
 public:
 	Rectangle(int edge_width, std::string edge_color, std::string fill_color);
-	Dessiner();
+	void Dessiner();
 };
