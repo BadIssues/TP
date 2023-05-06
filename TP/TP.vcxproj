@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cercle.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cercle.h" />
+    <ClInclude Include="Rectangle.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -136,15 +145,6 @@
       <AdditionalDependencies>C:\opencv\build\x64\vc15\lib\opencv_world460d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\Desktop\sauvegarde\Cercle.h" />
-    <ClInclude Include="..\..\..\..\..\..\Desktop\sauvegarde\Rectangle.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\Cercle.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\main.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\Rectangle.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

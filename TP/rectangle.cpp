@@ -1,4 +1,4 @@
-#include "Rectangle.h"
+#include "rectangle.h"
 
 Rectangle::Rectangle(int x, int y, int width, int height, int edge_width, const std::string& edge_color, const std::string& fill_color)
     : x_(x), y_(y), width_(width), height_(height), edge_width_(edge_width)
