@@ -22,9 +22,6 @@ int main()
     imshow("Cercles", image);//Montrer les dessins
     cv::waitKey(0); //Attendre la pression d'une touche
 
-    // Créer une image OpenCV
-    cv::Mat image(400, 400, CV_8UC3, cv::Scalar(255, 255, 255));
-
     // Créer deux instances de Rectangle
     Rectangle rect1(150, 150, 100, 50, 2, "blue", "green");
     Rectangle rect2(250, 250, 50, 100, 1, "red", "blue");
