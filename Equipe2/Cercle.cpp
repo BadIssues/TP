@@ -1,6 +1,6 @@
 #include "Cercle.h"
 
-Cercle::Cercle(int _x, int _y, int _r, int _edge_width, std::string _edge_color, std::string _fill_color)
+Cercle::Cercle(int _x, int _y, int _r, int _edge_width, cv::Scalar _edge_color, cv::Scalar _fill_color)
 {
     x = _x;
     y = _y;
@@ -30,21 +30,18 @@ int Cercle::getEdge_width() const
     return edge_width;
 }
 
-std::string Cercle::getEdge_color() const
+cv::Scalar Cercle::getEdge_color() const
 {
     return edge_color;
 }
 
-std::string Cercle::getFill_color() const
+cv::Scalar Cercle::getFill_color() const
 {
     return fill_color;
 }
 
 void Cercle::dessiner(cv::Mat& mat) const
 {
-    cv::Point center(getX(), getY());//Starting Point
-    int radius = getR();//Ending Point of the line
-    cv::Scalar line_Color(0, 0, 0);//Color of the line
-    int thickness = getEdge_width(); //thickens of the line
-    circle(mat, center, radius, line_Color, thickness);//using line() function to draw the line
+    circle(mat, cv::Point(getX(), getY()), getR(), getFill_color(), -1);
+    circle(mat, cv::Point(getX(), getY()), getR(), getEdge_color(), getEdge_width());
 }
