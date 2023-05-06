@@ -7,7 +7,7 @@
 int main()
 {
     //Déclarer une image OpenCV
-    cv::Mat image(400, 400, CV_8UC3, cv::Scalar(255, 255, 255));
+    cv::Mat image(400, 400, CV_8UC3, cv::Scalar(255, 255, 255)); //Couleur sous format BGR et non RGB
 
     //Créer deux instances de Cercle
     Cercle c1(200, 200, 50, 4, cv::Scalar(0, 255, 0), cv::Scalar(255, 0, 0));
@@ -17,11 +17,6 @@ int main()
     c1.dessiner(image);
     c2.dessiner(image);
 
-    //Afficher dans une fenêtre OpenCV
-    cv::namedWindow("Cercles", cv::WINDOW_NORMAL); //Ouvrir une fenêtre pour montrer les dessins
-    imshow("Cercles", image);//Montrer les dessins
-    cv::waitKey(0); //Attendre la pression d'une touche
-
     // Créer deux instances de Rectangle
     Rectangle rect1(150, 150, 100, 50, 2, cv::Scalar(0, 0, 255), cv::Scalar(255, 0, 0));
     Rectangle rect2(250, 250, 50, 100, 1, cv::Scalar(255, 0, 0), cv::Scalar(255, 0, 0));
@@ -30,10 +25,10 @@ int main()
     rect1.dessiner(image);
     rect2.dessiner(image);
 
-    // Afficher l'image dans une fenêtre OpenCV
-    cv::namedWindow("Rectangles", cv::WINDOW_NORMAL);
-    cv::imshow("Rectangles", image);
-    cv::waitKey(0);
+    //Afficher dans une fenêtre OpenCV
+    cv::namedWindow("Formes", cv::WINDOW_NORMAL); //Ouvrir une fenêtre pour montrer les dessins
+    imshow("Formes", image);//Montrer les dessins
+    cv::waitKey(0); //Attendre la pression d'une touche
 
 
     return 0;
