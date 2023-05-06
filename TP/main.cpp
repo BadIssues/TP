@@ -23,8 +23,8 @@ int main()
     cv::waitKey(0); //Attendre la pression d'une touche
 
     // Créer deux instances de Rectangle
-    Rectangle rect1(150, 150, 100, 50, 2, "blue", "green");
-    Rectangle rect2(250, 250, 50, 100, 1, "red", "blue");
+    Rectangle rect1(150, 150, 100, 50, 2, cv::Scalar(0, 0, 255), cv::Scalar(255, 0, 0));
+    Rectangle rect2(250, 250, 50, 100, 1, cv::Scalar(255, 0, 0), cv::Scalar(255, 0, 0));
 
     // Dessiner les deux rectangles sur l'image
     rect1.dessiner(image);
