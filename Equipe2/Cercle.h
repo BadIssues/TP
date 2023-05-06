@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
@@ -17,21 +16,21 @@ public:
 	//Epaisseur du Cercle
 	int edge_width;
 	//Couleur du bord
-	std::string edge_color;
+	cv::Scalar edge_color;
 	//Couleur de remplissage
-	std::string fill_color;
+	cv::Scalar fill_color;
 
 public:
 
-	Cercle(int _x, int _y, int _r, int _edge_width, std::string _edge_color, std::string _fill_color);
+	Cercle(int _x, int _y, int _r, int _edge_width, cv::Scalar _edge_color, cv::Scalar _fill_color);
 
 	//Getters des variables
 	int getX() const;
 	int getY() const;
 	int getR() const;
 	int getEdge_width() const;
-	std::string getEdge_color() const;
-	std::string getFill_color() const;
+	cv::Scalar getEdge_color() const;
+	cv::Scalar getFill_color() const;
 
 	//Dessin avec OpenCV
 	void dessiner(cv::Mat& mat) const;
