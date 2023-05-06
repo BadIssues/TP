@@ -17,11 +17,6 @@ int main()
     c1.dessiner(image);
     c2.dessiner(image);
 
-    //Afficher dans une fenêtre OpenCV
-    cv::namedWindow("Cercles", cv::WINDOW_NORMAL); //Ouvrir une fenêtre pour montrer les dessins
-    imshow("Cercles", image);//Montrer les dessins
-    cv::waitKey(0); //Attendre la pression d'une touche
-
     // Créer deux instances de Rectangle
     Rectangle rect1(150, 150, 100, 50, 2, "blue", "green");
     Rectangle rect2(250, 250, 50, 100, 1, "red", "blue");
@@ -30,10 +25,10 @@ int main()
     rect1.dessiner(image);
     rect2.dessiner(image);
 
-    // Afficher l'image dans une fenêtre OpenCV
-    cv::namedWindow("Rectangles", cv::WINDOW_NORMAL);
-    cv::imshow("Rectangles", image);
-    cv::waitKey(0);
+    //Afficher dans une fenêtre OpenCV
+    cv::namedWindow("Formes", cv::WINDOW_NORMAL); //Ouvrir une fenêtre pour montrer les dessins
+    imshow("Formes", image);//Montrer les dessins
+    cv::waitKey(0); //Attendre la pression d'une touche
 
 
     return 0;
