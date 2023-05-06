@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Equipe2\Cercle.h">
+    <ClInclude Include="..\..\..\..\..\..\Desktop\sauvegarde\Cercle.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="..\Equipe1\rectangle.h">
+    <ClInclude Include="..\..\..\..\..\..\Desktop\sauvegarde\Rectangle.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Equipe2\Cercle.cpp">
+    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\Cercle.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\Equipe1\rectangle.cpp">
+    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\Equipe2\main.cpp">
+    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\Rectangle.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

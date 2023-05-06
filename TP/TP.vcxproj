@@ -137,13 +137,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Equipe1\rectangle.h" />
-    <ClInclude Include="..\Equipe2\Cercle.h" />
+    <ClInclude Include="..\..\..\..\..\..\Desktop\sauvegarde\Cercle.h" />
+    <ClInclude Include="..\..\..\..\..\..\Desktop\sauvegarde\Rectangle.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Equipe1\rectangle.cpp" />
-    <ClCompile Include="..\Equipe2\Cercle.cpp" />
-    <ClCompile Include="..\Equipe2\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\Cercle.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\Desktop\sauvegarde\Rectangle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
