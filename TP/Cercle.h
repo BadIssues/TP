@@ -6,7 +6,7 @@
 
 class Cercle
 {
-public:
+private:
 
 	//Position du Cercle
 	int x;
