@@ -7,7 +7,7 @@
 int main()
 {
     //Déclarer une image OpenCV
-    cv::Mat image(400, 400, CV_8UC3, cv::Scalar(255, 255, 255));
+    cv::Mat image(400, 400, CV_8UC3, cv::Scalar(0, 0, 255));
 
     //Créer deux instances de Cercle
     Cercle c1(200, 200, 50, 4, cv::Scalar(0, 255, 0), cv::Scalar(255, 0, 0));
