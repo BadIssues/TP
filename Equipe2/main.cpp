@@ -5,21 +5,21 @@
 
 int main()
 {
-    //Déclarer une image OpenCV
+    //DÃ©clarer une image OpenCV
     cv::Mat image(400, 400, CV_8UC3, cv::Scalar(255, 255, 255));
 
-    //Créer deux instances de Cercle
-    Cercle c1(200, 200, 50, 4, "test", "test"); //Les couleurs ne sont pas encore disponibles
-    Cercle c2(400, 200, 50, 4, "test", "test");
+    //CrÃ©er deux instances de Cercle
+    Cercle c1(200, 200, 50, 4, cv::Scalar(0, 255, 0), cv::Scalar(255, 0, 0));
+    Cercle c2(400, 200, 50, 4, cv::Scalar(255, 0, 0), cv::Scalar(0, 0, 255));
 
     //Dessiner les deux cercles
     c1.dessiner(image);
     c2.dessiner(image);
 
-    //Afficher dans une fenêtre OpenCV
-    cv::namedWindow("Cercles", cv::WINDOW_NORMAL);//Declaring a window to show the circle
-    imshow("Cercles", image);//showing the circle
-    cv::waitKey(0);//Waiting for KeyStroke
+    //Afficher dans une fenÃªtre OpenCV
+    cv::namedWindow("Cercles", cv::WINDOW_NORMAL); //Ouvrir une fenÃªtre pour montrer les dessins
+    imshow("Cercles", image);//Montrer les dessins
+    cv::waitKey(0); //Attendre la pression d'une touche
 
 
     return 0;
