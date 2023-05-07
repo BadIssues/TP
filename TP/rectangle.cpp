@@ -1,25 +1,8 @@
 #include "Rectangle.h"
 
-Rectangle::Rectangle(int x_, int y_, int width_, int height_, int edge_width_, cv::Scalar edge_color_, cv::Scalar fill_color_)
+Rectangle::Rectangle(int _x, int _y, int _width, int _height, int _edge_width, cv::Scalar _edge_color, cv::Scalar _fill_color)
+    : Forme(_x, _y, _edge_width, _edge_color, _fill_color), width(_width), height(_height)
 {
-
-    x = x_;
-    y = y_;
-    width = width_;
-    height = height_;
-    edge_width = edge_width_;
-    edge_color = edge_color_;
-    fill_color = fill_color_;
-}
-
-int Rectangle::getX() const
-{
-    return x;
-}
-
-int Rectangle::getY() const
-{
-    return y;
 }
 
 int Rectangle::getWidth() const
@@ -29,21 +12,6 @@ int Rectangle::getWidth() const
 int Rectangle::getHeight() const
 {
     return height;
-}
-
-int Rectangle::getEdge_width() const
-{
-    return edge_width;
-}
-
-cv::Scalar Rectangle::getEdge_color() const
-{
-    return edge_color;
-}
-
-cv::Scalar Rectangle::getFill_color() const
-{
-    return fill_color;
 }
 
 void Rectangle::dessiner(cv::Mat& image) const

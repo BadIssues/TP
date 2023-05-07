@@ -1,47 +1,28 @@
 #pragma once
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "Formes.h"
+#include "Forme.h"
 
-//Rectangle id x y width height edge_width edge_color fill_color
+//rectangle id x y l w edge_width edge_color fill_color
 
-class Rectangle : public Formes
+class Rectangle: public Forme
 {
 private:
-    // Les variables du rectangle :
-
-    // Positions du rectangle:
-    int x; 
-    int y; 
-
     
-    // Largeur et longueur du rectangle:
-    int width; 
+    //Largeur du Rectangle
+    int width;
+    //Hauteur du Rectangle
     int height;
 
-    // taille de la bordure du rectangle:
-    int edge_width;
-
-    // Couleur de la bordure du rectangle:
-    cv::Scalar edge_color;
-
-    // Couleur de remplisage du rectangle:
-    cv::Scalar fill_color;
-
 public:
-    // Constructeur
-    Rectangle(int x_, int y_, int width_, int height_, int edge_width_, cv::Scalar edge_color_, cv::Scalar fill_color_);
+
+    //Constructeur
+    Rectangle(int _x, int _y, int _width, int _height, int _edge_width, cv::Scalar _edge_color, cv::Scalar _fill_color);
 
     //Getters des variables
-    int getX() const;
-    int getY() const;
     int getHeight() const;
     int getWidth() const;
-    int getEdge_width() const;
-    cv::Scalar getEdge_color() const;
-    cv::Scalar getFill_color() const;
 
-    //Méthode pour dessiner avec OpenCV :
-    void dessiner(cv::Mat& image) const;
-
+    //Dessin avec OpenCV
+    void dessiner(cv::Mat& image) const override;
 };
