@@ -1,8 +1,12 @@
 #pragma once
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include "Formes.h"
 
-class Rectangle {
+//Rectangle id x y width height edge_width edge_color fill_color
+
+class Rectangle : public Formes
+{
 private:
     // Les variables du rectangle :
 

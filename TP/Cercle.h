@@ -1,10 +1,11 @@
 #pragma once
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include "Formes.h"
 
 //cercle id x y r edge_width edge_color fill_color
 
-class Cercle
+class Cercle : public Formes
 {
 private:
 

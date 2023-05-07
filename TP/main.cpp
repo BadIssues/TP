@@ -3,6 +3,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include "Cercle.h"
 #include "Rectangle.h"
+#include "Formes.h"
 
 int main()
 {
@@ -10,16 +11,16 @@ int main()
     cv::Mat image(400, 400, CV_8UC3, cv::Scalar(255, 255, 255)); //Couleur sous format BGR et non RGB
 
     //Créer deux instances de Cercle
-    Cercle c1(200, 200, 50, 4, cv::Scalar(0, 255, 0), cv::Scalar(255, 0, 0));
-    Cercle c2(400, 200, 50, 4, cv::Scalar(255, 0, 0), cv::Scalar(0, 0, 255));
+    Formes c1(200, 200, 50, 4, cv::Scalar(0, 255, 0), cv::Scalar(255, 0, 0));
+    Formes c2(400, 200, 50, 4, cv::Scalar(255, 0, 0), cv::Scalar(0, 0, 255));
 
     //Dessiner les deux cercles
     c1.dessiner(image);
     c2.dessiner(image);
 
     // Créer deux instances de Rectangle
-    Rectangle rect1(150, 150, 100, 50, 2, cv::Scalar(0, 0, 255), cv::Scalar(255, 0, 0));
-    Rectangle rect2(250, 250, 50, 100, 1, cv::Scalar(255, 0, 0), cv::Scalar(255, 0, 0));
+    Formes rect1(150, 150, 100, 50, 2, cv::Scalar(0, 0, 255), cv::Scalar(255, 0, 0));
+    Formes rect2(250, 250, 50, 100, 1, cv::Scalar(255, 0, 0), cv::Scalar(255, 0, 0));
 
     // Dessiner les deux rectangles sur l'image
     rect1.dessiner(image);
