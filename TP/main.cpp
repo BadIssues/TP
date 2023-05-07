@@ -4,7 +4,6 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include "Cercle.h"
 #include "Rectangle.h"
-#include "Formes.h"
 
 int main()
 {
