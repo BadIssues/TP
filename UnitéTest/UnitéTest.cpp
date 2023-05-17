@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
+#include <opencv2/opencv.hpp>
 #include "../TP/main.cpp"
-#include "dessinerligne.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -12,22 +12,27 @@ namespace UnitéTest
 	public:
 		TEST_METHOD(TestDessinerLigne_Longueur5)
 		{
-			// Appeler la fonction à tester
-			dessinerLigne(0, 0, 5, 0);
+			cv::Mat image(300, 400, CV_8UC3, cv::Scalar(0, 0, 0));  // Image noire de taille 400x300
 
-			// TODO: Ajouter des assertions pour vérifier la sortie graphique
-			// Exemple : vérifier les pixels de la fenêtre ou comparer des captures d'écran
+			// Appeler la fonction à tester
+			dessinerLigne(image, 0, 0, 5, 0);
+
+			// TODO: Ajouter des assertions pour vérifier l'image résultante
+			// Exemple : vérifier les pixels de l'image ou comparer avec une image de référence
 			Assert::Fail(L"Not implemented");
 		}
 
 		TEST_METHOD(TestDessinerLigne_Longueur10)
 		{
-			// Appeler la fonction à tester
-			dessinerLigne(0, 0, 10, 0);
+			cv::Mat image(300, 400, CV_8UC3, cv::Scalar(0, 0, 0));  // Image noire de taille 400x300
 
-			// TODO: Ajouter des assertions pour vérifier la sortie graphique
-			// Exemple : vérifier les pixels de la fenêtre ou comparer des captures d'écran
+			// Appeler la fonction à tester
+			dessinerLigne(image, 0, 0, 10, 0);
+
+			// TODO: Ajouter des assertions pour vérifier l'image résultante
+			// Exemple : vérifier les pixels de l'image ou comparer avec une image de référence
 			Assert::Fail(L"Not implemented");
 		}
 	};
 }
+
