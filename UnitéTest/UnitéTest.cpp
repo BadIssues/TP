@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "../TP/main.cpp"  
+#include "../TP/main.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -11,28 +11,22 @@ namespace UnitéTest
 	public:
 		TEST_METHOD(TestDessinerLigne_Longueur5)
 		{
-			std::stringstream output;
-			std::streambuf* oldCoutBuffer = std::cout.rdbuf();
-			std::cout.rdbuf(output.rdbuf());
+			// Appeler la fonction à tester
+			dessinerLigne(0, 0, 5, 0);
 
-			dessinerLigne(5);
-
-			std::cout.rdbuf(oldCoutBuffer);
-
-			Assert::AreEqual(output.str(), std::string("-----\n"));
+			// TODO: Ajouter des assertions pour vérifier la sortie graphique
+			// Exemple : vérifier les pixels de la fenêtre ou comparer des captures d'écran
+			Assert::Fail(L"Not implemented");
 		}
 
 		TEST_METHOD(TestDessinerLigne_Longueur10)
 		{
-			std::stringstream output;
-			std::streambuf* oldCoutBuffer = std::cout.rdbuf();
-			std::cout.rdbuf(output.rdbuf());
+			// Appeler la fonction à tester
+			dessinerLigne(0, 0, 10, 0);
 
-			dessinerLigne(10);
-
-			std::cout.rdbuf(oldCoutBuffer);
-
-			Assert::AreEqual(output.str(), std::string("----------\n"));
+			// TODO: Ajouter des assertions pour vérifier la sortie graphique
+			// Exemple : vérifier les pixels de la fenêtre ou comparer des captures d'écran
+			Assert::Fail(L"Not implemented");
 		}
 	};
 }
