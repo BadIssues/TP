@@ -4,6 +4,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include "Cercle.h"
 #include "Rectangle.h"
+#include "Triangle.h"
 
 int main()
 {
@@ -19,12 +20,21 @@ int main()
     Rectangle r1(150, 150, 100, 50, 2, cv::Scalar(0, 0, 255), cv::Scalar(255, 0, 0));
     Rectangle r2(250, 250, 50, 100, 1, cv::Scalar(255, 0, 0), cv::Scalar(255, 0, 0));
 
+    //Créer triangle 
+    Triangle t1(150, 150, 67, 1, cv::Scalar(0, 5, 255), cv::Scalar(0, 200, 255));
+
+    
+
+
+
+
+
     //Ajout des formes dans le vector
     canva.push_back(&c1);
     canva.push_back(&c2);
     canva.push_back(&r1);
     canva.push_back(&r2);
-
+    canva.push_back(&t1);
     //Dessin du contenu du vector
     for (int i = 0; i < canva.size(); ++i)
     {
