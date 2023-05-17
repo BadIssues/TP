@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../TP/main.cpp"
+#include "dessinerligne.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
