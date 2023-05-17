@@ -2,12 +2,13 @@
 #include "CppUnitTest.h"
 #include <opencv2/opencv.hpp>
 #include "../TP/main.cpp"
+#include "dessinerligne.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace UnitéTest
+namespace UniteTest
 {
-	TEST_CLASS(UnitéTest)
+	TEST_CLASS(UnitTest)
 	{
 	public:
 		TEST_METHOD(TestDessinerLigne_Longueur5)
