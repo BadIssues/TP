@@ -39,10 +39,18 @@ int main()
         canva.at(i)->dessiner(image);
     }
 
-    //Afficher dans une fenêtre OpenCV
-    cv::namedWindow("Image", cv::WINDOW_NORMAL); //Ouvrir une fenêtre pour montrer les dessins
-    imshow("Image", image);//Montrer les dessins
-    cv::waitKey(0); //Attendre la pression d'une touche
+    while (true)
+    {
+        double angle = 90;//Permet de définir l'angle de rotation
+        cv::Point2f center(image.cols / 2.0, image.rows / 2.0);
+        cv::Mat rotationMatrix = cv::getRotationMatrix2D(center, angle, 1.0);
+        cv::warpAffine(image, image, rotationMatrix, image.size());//Permet de déssiner la rotation
+
+        //Afficher dans une fenêtre OpenCV
+        cv::namedWindow("Image", cv::WINDOW_NORMAL); //Ouvrir une fenêtre pour montrer les dessins
+        imshow("Image", image);//Montrer les dessins
+        cv::waitKey(0); //Attendre la pression d'une touche
+    }
 
     return 0;
 }
