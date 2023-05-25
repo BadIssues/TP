@@ -21,7 +21,7 @@ public:
     TEST_METHOD(TestCercle)
     {
         Parseur p;
-        Forme* f = p.parse("cercle");  // Exemple générique sans dimensions spécifiques
+        Forme* f = p.parse("cercle"); 
 
         // Vérifier si la forme retournée par le parseur est un Cercle
         Cercle* cercle = dynamic_cast<Cercle*>(f);
@@ -31,7 +31,7 @@ public:
     TEST_METHOD(TestLigne)
     {
         Parseur p;
-        Forme* f = p.parse("ligne");  // Exemple générique sans dimensions spécifiques
+        Forme* f = p.parse("ligne");  
 
         // Vérifier si la forme retournée par le parseur est une Ligne
         Ligne* ligne = dynamic_cast<Ligne*>(f);
@@ -41,7 +41,7 @@ public:
     TEST_METHOD(TestRectangle)
     {
         Parseur p;
-        Forme* f = p.parse("rectangle");  // Exemple générique sans dimensions spécifiques
+        Forme* f = p.parse("rectangle"); 
 
         // Vérifier si la forme retournée par le parseur est un Rectangle
         Rectangle* rectangle = dynamic_cast<Rectangle*>(f);
@@ -51,7 +51,7 @@ public:
     TEST_METHOD(TestTriangle)
     {
         Parseur p;
-        Forme* f = p.parse("triangle");  // Exemple générique sans dimensions spécifiques
+        Forme* f = p.parse("triangle");  
 
         // Vérifier si la forme retournée par le parseur est un Triangle
         Triangle* triangle = dynamic_cast<Triangle*>(f);

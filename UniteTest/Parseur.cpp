@@ -8,9 +8,6 @@
 Forme* Parseur::parse(const std::string& description)
 {
     // Code de parsing pour identifier la forme et ses paramètres
-    // ...
-
-    // Exemple générique sans dimensions spécifiques
     if (description == "cercle")
     {
         return new Cercle(0, 0, 0, 0, cv::Scalar(), cv::Scalar());
