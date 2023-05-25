@@ -44,20 +44,5 @@ int main()
     imshow("Image", image);//Montrer les dessins
     cv::waitKey(0); //Attendre la pression d'une touche
 
-    int Rotation = 180;//initialization rotation angle//
-    cv::createTrackbar("Rotation", "AfterRotation", &Rotation, 360);//creating trackbar//
-    int Height = before_rotation.rows / 2;//getting middle point of rows//
-    int Width = before_rotation.cols / 2;//getting middle point of height//
-    while (true) {
-        cv::Mat for_Rotation = cv::getRotationMatrix2D(Point(Width, Height), (Rotation - 180), 1);//affine transformation matrix for 2D rotation//
-        cv::Mat for_Rotated;//declaring a matrix for rotated image
-        cv::warpAffine(before_rotation, for_Rotated, for_Rotation, before_rotation.size());//applying affine transformation//
-        cv::imshow("AfterRotation", for_Rotated);//show rotated image//
-        int termination = cv::waitKey(30);//allow system 30 millisecond time to create the rottion effect//
-        if (termination == 27) { //terminate if Esc button is pressed//
-            break;
-        }
-    }
-    return 0;
     return 0;
 }
