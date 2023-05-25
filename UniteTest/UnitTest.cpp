@@ -1,35 +1,60 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include "Dessinateur.h"
+#include "Parseur.h"
+#include "../TP/Forme.h"
+#include "../TP/Cercle.h"
+#include "../TP/Ligne.h"
+#include "../TP/Rectangle.h"
+#include "../TP/Triangle.h"
+#include "../TP/Forme.cpp"
+#include "../TP/Cercle.cpp"
+#include "../TP/Ligne.cpp"
+#include "../TP/Rectangle.cpp"
+#include "../TP/Triangle.cpp"
+
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-
-
-    TEST_CLASS(DessinateurTests)
+TEST_CLASS(FormeTest)
+{
+public:
+    TEST_METHOD(TestCercle)
     {
-    public:
-        TEST_METHOD(TestDessinerLigne)
-        {
-            // Arrange
-            cv::Mat image(300, 400, CV_8UC3, cv::Scalar(0, 0, 0));  // Image noire de taille 400x300
-            cv::Scalar couleur(255, 255, 255);  // Couleur blanche
-            int epaisseur = 2;
-            int x1 = 50, y1 = 50;
-            int x2 = 200, y2 = 50;
+        Parseur p;
+        Forme* f = p.parse("cercle");  // Exemple générique sans dimensions spécifiques
 
-            // Act
-            DessinerLigne(image, x1, y1, x2, y2, couleur, epaisseur);
+        // Vérifier si la forme retournée par le parseur est un Cercle
+        Cercle* cercle = dynamic_cast<Cercle*>(f);
+        Assert::IsNotNull(cercle);
+    }
 
-            // Assert
-            cv::Scalar couleurPixel = image.at<cv::Vec3b>(y1, x1);
-            std::wstring message = L"Couleur attendue : (255, 255, 255), Couleur obtenue : (" +
-                std::to_wstring(couleurPixel[0]) + L", " +
-                std::to_wstring(couleurPixel[1]) + L", " +
-                std::to_wstring(couleurPixel[2]) + L")";
-            Assert::IsTrue(couleur == couleurPixel, message.c_str());
-        }
-    };
+    TEST_METHOD(TestLigne)
+    {
+        Parseur p;
+        Forme* f = p.parse("ligne");  // Exemple générique sans dimensions spécifiques
 
+        // Vérifier si la forme retournée par le parseur est une Ligne
+        Ligne* ligne = dynamic_cast<Ligne*>(f);
+        Assert::IsNotNull(ligne);
+    }
+
+    TEST_METHOD(TestRectangle)
+    {
+        Parseur p;
+        Forme* f = p.parse("rectangle");  // Exemple générique sans dimensions spécifiques
+
+        // Vérifier si la forme retournée par le parseur est un Rectangle
+        Rectangle* rectangle = dynamic_cast<Rectangle*>(f);
+        Assert::IsNotNull(rectangle);
+    }
+
+    TEST_METHOD(TestTriangle)
+    {
+        Parseur p;
+        Forme* f = p.parse("triangle");  // Exemple générique sans dimensions spécifiques
+
+        // Vérifier si la forme retournée par le parseur est un Triangle
+        Triangle* triangle = dynamic_cast<Triangle*>(f);
+        Assert::IsNotNull(triangle);
+    }
+};
