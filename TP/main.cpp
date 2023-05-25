@@ -1,3 +1,4 @@
+#include "pch.h"
 #include <iostream>
 #include <vector>
 #include <opencv2/highgui/highgui.hpp>
