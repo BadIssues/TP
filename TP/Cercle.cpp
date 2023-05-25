@@ -12,6 +12,6 @@ int Cercle::getR() const
 
 void Cercle::dessiner(cv::Mat& mat) const
 {
-    circle(mat, cv::Point(getX(), getY()), getR(), getFill_color(), -1);
-    circle(mat, cv::Point(getX(), getY()), getR(), getEdge_color(), getEdge_width());
+    circle(mat, cv::Point(getX(), getY()), getR(), getFill_color(), -1, 256, 0);
+    circle(mat, cv::Point(getX(), getY()), getR(), getEdge_color(), getEdge_width(), 256, 0);
 }
