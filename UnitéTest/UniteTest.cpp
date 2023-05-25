@@ -1,9 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include <opencv2/opencv.hpp>
-#include "../TP/main.cpp"
-#include "dessinerligne.cpp"
-
+void dessinerLigne(cv::Mat& image, int x1, int y1, int x2, int y2);
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace UniteTest
@@ -36,4 +34,5 @@ namespace UniteTest
 		}
 	};
 }
+
 
