@@ -49,7 +49,7 @@ int main()
         //Afficher dans une fenêtre OpenCV
         cv::namedWindow("Image", cv::WINDOW_NORMAL); //Ouvrir une fenêtre pour montrer les dessins
         imshow("Image", image);//Montrer les dessins
-        cv::waitKey(0); //Attendre la pression d'une touche
+        cv::waitKey(100); //Delay entre chaque rotation
     }
 
     return 0;
