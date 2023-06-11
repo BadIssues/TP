@@ -2,6 +2,7 @@
 #include <vector>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include "readFile.h"
 #include "Cercle.h"
 #include "Rectangle.h"
 #include "Triangle.h"
@@ -11,7 +12,8 @@ int main()
 {
     //Déclarer une image OpenCV
     cv::Mat image(cv::Size(400, 400), CV_8UC3, cv::Scalar(255, 255, 255)); //Couleur sous format BGR et non RGB
-    //Déclarer un vector permettant le stockage des formes
+    
+    /*//Déclarer un vector permettant le stockage des formes
     std::vector<Forme*> canva;
 
     //Créer deux instances de Cercle
@@ -37,7 +39,69 @@ int main()
     for (int i = 0; i < canva.size(); ++i)
     {
         canva.at(i)->dessiner(image);
+    }*/
+
+
+
+    //Déclarer des vector permettant le stockage des formes
+    std::vector<Cercle> circleLayers;
+    std::vector<Rectangle> rectangleLayers;
+    std::vector<Ligne> lineLayers;
+    std::vector<Triangle> triangleLayers;
+    //Déclarer un vector rassemblant l'adresse de toutes les formes
+    std::vector<Forme*> layers;
+
+    //Lire le fichier texte
+    std::vector<std::vector<std::string>> cmd = readFile();
+
+    for (int i = 0; i < cmd.size(); i++)
+    {
+        if (cmd[i][0] == "cercle")
+        {
+            Cercle c(std::stoi(cmd[i][2]), std::stoi(cmd[i][3]), std::stoi(cmd[i][4]), std::stoi(cmd[i][5]), cv::Scalar(std::stoi(cmd[i][6]), std::stoi(cmd[i][7]), std::stoi(cmd[i][8])), cv::Scalar(std::stoi(cmd[i][9]), std::stoi(cmd[i][10]), std::stoi(cmd[i][11])));
+            circleLayers.push_back(c);
+        }
+        else if (cmd[i][0] == "rectangle")
+        {
+            Rectangle r(std::stoi(cmd[i][2]), std::stoi(cmd[i][3]), std::stoi(cmd[i][4]), std::stoi(cmd[i][5]), std::stoi(cmd[i][6]), cv::Scalar(std::stoi(cmd[i][7]), std::stoi(cmd[i][8]), std::stoi(cmd[i][9])), cv::Scalar(std::stoi(cmd[i][10]), std::stoi(cmd[i][11]), std::stoi(cmd[i][12])));
+            rectangleLayers.push_back(r);
+        }
+        if (cmd[i][0] == "ligne")
+        {
+            Ligne l(std::stoi(cmd[i][2]), std::stoi(cmd[i][3]), std::stoi(cmd[i][4]), std::stoi(cmd[i][5]), cv::Scalar(std::stoi(cmd[i][6]), std::stoi(cmd[i][7]), std::stoi(cmd[i][8])), cv::Scalar(std::stoi(cmd[i][9]), std::stoi(cmd[i][10]), std::stoi(cmd[i][11])));
+            lineLayers.push_back(l);
+        }
+        if (cmd[i][0] == "triangle")
+        {
+            Triangle t(std::stoi(cmd[i][2]), std::stoi(cmd[i][3]), std::stoi(cmd[i][4]), std::stoi(cmd[i][5]), cv::Scalar(std::stoi(cmd[i][6]), std::stoi(cmd[i][7]), std::stoi(cmd[i][8])), cv::Scalar(std::stoi(cmd[i][9]), std::stoi(cmd[i][10]), std::stoi(cmd[i][11])));
+            triangleLayers.push_back(t);
+        }
     }
+
+    for (int i = 0; i < circleLayers.size(); i++)
+    {
+        layers.push_back(&circleLayers[i]);
+    }
+    for (int i = 0; i < rectangleLayers.size(); i++)
+    {
+        layers.push_back(&rectangleLayers[i]);
+    }
+    for (int i = 0; i < lineLayers.size(); i++)
+    {
+        layers.push_back(&lineLayers[i]);
+    }
+    for (int i = 0; i < triangleLayers.size(); i++)
+    {
+        layers.push_back(&triangleLayers[i]);
+    }
+
+    //Dessin du contenu du vector
+    for (int i = 0; i < layers.size(); ++i)
+    {
+        layers.at(i)->dessiner(image);
+    }
+
+
 
     while (true)
     {
