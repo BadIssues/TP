@@ -8,6 +8,18 @@
 #include "Triangle.h"
 #include "Ligne.h"
 
+// Fonction de rappel pour gérer l'événement de clic gauche de la souris
+void Souris(int event, int x, int y, int flags, void* userdata)
+{
+    if (event == cv::EVENT_LBUTTONDOWN) {
+        // Créer une nouvelle forme par défaut à la position du clic gauche
+        cv::Scalar defaultColor(0, 0, 0); // Couleur par défaut (noir)
+        std::unique_ptr<Rectangle> r = std::make_unique<Rectangle>(x, y, 50,50,4, defaultColor,defaultColor);
+        std::vector<std::unique_ptr<Forme>>& layers = *static_cast<std::vector<std::unique_ptr<Forme>>*>(userdata);
+        layers.push_back(std::move(r));
+    }
+}
+
 int main()
 {
     // Déclarer une image OpenCV
